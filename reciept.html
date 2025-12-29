@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Receipt</title>
+    <link rel="stylesheet" href="resources/css/reciept-style.css" />
+  </head>
+  <body>
+    <div class="receipt-container">
+      <div class="header">
+        <div class="success-icon">✓</div>
+        <h1>Booking Confirmed</h1>
+        <p class="reference">Reference: <span id="referenceNumber"></span></p>
+      </div>
+
+      <div class="receipt-section">
+        <div class="section-title">Booking Information</div>
+        <div class="receipt-row">
+          <span class="receipt-label">Booking Name:</span>
+          <span class="receipt-value" id="bookingName"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Booker Type:</span>
+          <span class="receipt-value" id="bookerType"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Email:</span>
+          <span class="receipt-value" id="email"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Utilization of Materials:</span>
+          <span class="receipt-value" id="utilization"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Type of Materials:</span>
+          <span class="receipt-value" id="materialsType"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Booked Resourced:</span>
+          <span class="receipt-value" id="resource"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Date:</span>
+          <span class="receipt-value" id="date"></span>
+        </div>
+      </div>
+
+      <div class="receipt-section">
+        <!-- <div class="section-title">Facility Details</div>
+        <div class="receipt-row">
+          <span class="receipt-label">Library:</span>
+          <span class="receipt-value" id="libraryName"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Facility:</span>
+          <span class="receipt-value" id="facilityName"></span>
+        </div>
+      </div>
+
+      <div class="receipt-section">
+        <div class="section-title">Schedule</div>
+        <div class="receipt-row">
+          <span class="receipt-label">Date:</span>
+          <span class="receipt-value" id="bookingDate"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Time:</span>
+          <span class="receipt-value" id="bookingTime"></span>
+        </div>
+      </div> -->
+        <div class="footer">
+          <div class="timestamp">Issued on: <span id="timestamp"></span></div>
+          <div class="instruction">
+            Present it when you arrive at the facility.
+          </div>
+
+          <div class="button-container">
+            <button class="btn btn-primary" onclick="window.print()">
+              🖨️ Print Receipt
+            </button>
+            <button class="btn btn-secondary" onclick="goBackToBooking()">
+              ← New Booking
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="resources/js/reciept-script.js"></script>
+</html>
