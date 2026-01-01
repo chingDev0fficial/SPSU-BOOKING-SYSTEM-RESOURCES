@@ -325,3 +325,13 @@ input[type="submit"]:active {
 }
 
 /* ============================ */
+
+.error-msg {
+  margin-bottom: 5px;
+  padding: 5px;
+  border: #e74c3c solid 1px;
+  background-color: #e74c3c50;
+  border-radius: 5px;
+  color: #e74c3c;
+  display: none;
+}

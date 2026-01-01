@@ -10,6 +10,10 @@ const materialsType = document.getElementById("materials_type");
 const bookingForm = document.getElementById("booking-form");
 // const custom_select_options = document.getElementById("options");
 // const seach = document.getElementById("search");
+const author = document.getElementById("author");
+const title = document.getElementById("title");
+const yearPublished = document.getElementById("yearPublished");
+const errorMsg = document.getElementById("errorMsg");
 const submitBtn = document.getElementById("submit-btn");
 
 function hanldeUtilizationChange(e) {
@@ -112,6 +116,20 @@ function hanldeUtilizationChange(e) {
 
 function submitForm(e) {
   e.preventDefault();
+
+  const noBookedResource =
+    !author.value && !title.value && !yearPublished.value;
+
+  if (noBookedResource) {
+    console.log("Value:", author.value);
+    errorMsg.textContent =
+      "No resources being booked. Please book a resources by filling up Author/Title/Year Published.";
+    errorMsg.style.display = "block";
+    return;
+  }
+
+  errorMsg.textContent = "";
+  errorMsg.style.display = "none";
 
   submitBtn.textContent = "Submitting...";
 
