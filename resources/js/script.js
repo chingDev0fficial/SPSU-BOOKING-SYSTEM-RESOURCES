@@ -1,15 +1,15 @@
-const RESOURCES_API =
-  "https://script.google.com/macros/s/AKfycbyAIdMqG4Bfd-SUdtZhQfKAeyHXmheKTDp8QLFIkzAJDp1nXRcnY8hIO73WvKDmjjbH/exec";
+// const RESOURCES_API =
+//   "https://script.google.com/macros/s/AKfycbyAIdMqG4Bfd-SUdtZhQfKAeyHXmheKTDp8QLFIkzAJDp1nXRcnY8hIO73WvKDmjjbH/exec";
 const INSERT_BOOKING_RESOURCE_API =
-  "https://script.google.com/macros/s/AKfycbzhb-Aj9iIInGXe319Kid_LiW3L8_vCQG9MjmhhqTMp2y-GvJ6UMynXvKcX5q9Z8_HK/exec";
+  "https://script.google.com/macros/s/AKfycbzfPZFXO7MXNCdS80CSwyiT4JwTyd2ShW1iWtLvhnhmvlsJHICMCCemXqa81CisvCtV/exec";
 const BOOKED_RESOURCES_API =
   "https://script.google.com/macros/s/AKfycbzBn1LabXAKnX8NjPUn1OrH5RSPyoHeGPIIW3WgPJ_-6rHW30XIeAWxKdTtxwJjLupp/exec";
 
 const utilizationSelect = document.getElementById("utilization");
 const materialsType = document.getElementById("materials_type");
 const bookingForm = document.getElementById("booking-form");
-const custom_select_options = document.getElementById("options");
-const seach = document.getElementById("search");
+// const custom_select_options = document.getElementById("options");
+// const seach = document.getElementById("search");
 const submitBtn = document.getElementById("submit-btn");
 
 function hanldeUtilizationChange(e) {
@@ -69,46 +69,46 @@ function hanldeUtilizationChange(e) {
   optionsMapping[selectedValue]();
 }
 
-async function handleMaterialsChange(e) {
-  const targetValue = e.target.value;
+// async function handleMaterialsChange(e) {
+//   const targetValue = e.target.value;
 
-  const handleFetchResources = async (materialType) => {
-    try {
-      const response = await fetch(
-        `${RESOURCES_API}?material_type=${materialType}`
-      );
+//   const handleFetchResources = async (materialType) => {
+//     try {
+//       const response = await fetch(
+//         `${RESOURCES_API}?material_type=${materialType}`
+//       );
 
-      if (!response.ok) {
-        throw new Error("Error fetching resources");
-      }
+//       if (!response.ok) {
+//         throw new Error("Error fetching resources");
+//       }
 
-      const result = await response.json();
-      return result;
-    } catch (e) {
-      console.error(`An error occurs ${e}`);
-      return [];
-    }
-  };
+//       const result = await response.json();
+//       return result;
+//     } catch (e) {
+//       console.error(`An error occurs ${e}`);
+//       return [];
+//     }
+//   };
 
-  custom_select_options.innerHTML = "";
+//   custom_select_options.innerHTML = "";
 
-  const div = document.createElement("div");
-  div.className = "loader";
-  custom_select_options.appendChild(div);
+//   const div = document.createElement("div");
+//   div.className = "loader";
+//   custom_select_options.appendChild(div);
 
-  const resources = await handleFetchResources(targetValue);
+//   const resources = await handleFetchResources(targetValue);
 
-  resources.forEach((resource) => {
-    const li = document.createElement("li");
-    li.setAttribute("value", resource.id);
-    li.setAttribute("text-value", resource.title);
-    li.innerHTML = `${resource.title} <span style="display: none">${resource.author} ${resource.year_published}</span>`;
-    div.style.display = "none";
-    custom_select_options.appendChild(li);
-  });
+//   resources.forEach((resource) => {
+//     const li = document.createElement("li");
+//     li.setAttribute("value", resource.id);
+//     li.setAttribute("text-value", resource.title);
+//     li.innerHTML = `${resource.title} <span style="display: none">${resource.author} ${resource.year_published}</span>`;
+//     div.style.display = "none";
+//     custom_select_options.appendChild(li);
+//   });
 
-  seach.style.display = "block";
-}
+//   seach.style.display = "block";
+// }
 
 function submitForm(e) {
   e.preventDefault();
@@ -175,9 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
     utilizationSelect.addEventListener("change", hanldeUtilizationChange);
   }
 
-  if (materialsType) {
-    materialsType.addEventListener("change", handleMaterialsChange);
-  }
+  // if (materialsType) {
+  //   materialsType.addEventListener("change", handleMaterialsChange);
+  // }
 
   if (bookingForm) {
     bookingForm.addEventListener("submit", submitForm);

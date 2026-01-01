@@ -25,7 +25,10 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("utilization").textContent =
     data.utilization_of_materials;
   document.getElementById("materialsType").textContent = data.type_of_materials;
-  document.getElementById("resource").textContent = data.booked_resources_id;
+  document.getElementById("author").textContent = data.author || "N/A";
+  document.getElementById("title").textContent = data.title || "N/A";
+  document.getElementById("yearPublished").textContent =
+    data.year_published || "N/A";
   document.getElementById("date").textContent = new Date(
     data.date
   ).toLocaleString("en-PH", {
