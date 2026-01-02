@@ -48,8 +48,8 @@ function hanldeUtilizationChange(e) {
   }
   function generateHomeOptions() {
     options = {
-      books: "Books",
-      fiction: "Fiction",
+      circulation: "Circulation",
+      filipiniana_fiction: "Filipiniana or Fiction",
     };
 
     defaultProcess();
