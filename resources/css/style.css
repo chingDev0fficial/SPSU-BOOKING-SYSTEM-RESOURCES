@@ -12,14 +12,14 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100%;
   padding: 20px;
-  background-color: #3b3939;
+  /* background-color: #3b3939; */
   /* background-color: #3f3f3f; */
-  color: #fff;
+  color: #3b3939;
 }
 
 .form-container {
   /* background-color: #494848; */
-  background-color: #3f3f3f;
+  /* background-color: #3f3f3f; */
   padding: 40px;
   width: 100%;
   max-width: 800px;
@@ -44,7 +44,7 @@ body {
 }
 
 h2 {
-  color: #fff;
+  color: #3b3939;
   margin-bottom: 10px;
   font-size: 28px;
 }
@@ -62,7 +62,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 8px;
-  color: #fff;
+  color: #3b3939;
   font-weight: 500;
   font-size: 14px;
 }
@@ -337,4 +337,17 @@ input[type="submit"]:active {
   border-radius: 5px;
   color: #e74c3c;
   display: none;
+}
+
+.form-note {
+  width: 100%;
+  display: flex;
+  text-align: justify;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #ffb30030;
+  color: #ffb300;
+  outline: none;
+  border: #ffb300 solid 1px;
+  border-radius: 5px;
 }

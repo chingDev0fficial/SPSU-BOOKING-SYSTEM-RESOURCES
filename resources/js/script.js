@@ -49,7 +49,8 @@ function hanldeUtilizationChange(e) {
   function generateHomeOptions() {
     options = {
       circulation: "Circulation",
-      filipiniana_fiction: "Filipiniana or Fiction",
+      filipiniana: "Filipiniana",
+      fiction: "Fiction",
     };
 
     defaultProcess();
