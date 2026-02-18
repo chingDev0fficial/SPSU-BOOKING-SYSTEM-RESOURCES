@@ -345,8 +345,8 @@ input[type="submit"]:active {
   text-align: justify;
   padding: 10px;
   margin-bottom: 10px;
-  background: #ffb30030;
-  color: #ffb300;
+  background: #fff;
+  color: green;
   outline: none;
   border: #ffb300 solid 1px;
   border-radius: 5px;

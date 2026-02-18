@@ -5,6 +5,7 @@ const INSERT_BOOKING_RESOURCE_API =
 const BOOKED_RESOURCES_API =
   "https://script.google.com/macros/s/AKfycbzBn1LabXAKnX8NjPUn1OrH5RSPyoHeGPIIW3WgPJ_-6rHW30XIeAWxKdTtxwJjLupp/exec";
 
+const bookerType = document.getElementById("booker_type");
 const utilizationSelect = document.getElementById("utilization");
 const materialsType = document.getElementById("materials_type");
 const bookingForm = document.getElementById("booking-form");
@@ -15,6 +16,39 @@ const title = document.getElementById("title");
 const yearPublished = document.getElementById("yearPublished");
 const errorMsg = document.getElementById("errorMsg");
 const submitBtn = document.getElementById("submit-btn");
+
+function handleBookerTypeChange(e) {
+  const selectedValue = e.target.value;
+  const isFaculty = selectedValue === "faculty";
+
+  // Disable/enable Utilization and Materials Type for Faculty and Staff
+  utilizationSelect.disabled = isFaculty;
+  utilizationSelect.required = !isFaculty;
+  materialsType.disabled = isFaculty;
+  materialsType.required = !isFaculty;
+
+  if (isFaculty) {
+    // Reset to default placeholder values
+    utilizationSelect.value = "";
+    materialsType.innerHTML = "";
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.text = "Not applicable for Faculty and Staff";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    materialsType.appendChild(defaultOption);
+  } else {
+    // Re-enable and reset to default state
+    utilizationSelect.value = "";
+    materialsType.innerHTML = "";
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.text = "Please select utilization type first";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    materialsType.appendChild(defaultOption);
+  }
+}
 
 function hanldeUtilizationChange(e) {
   function defaultProcess() {
@@ -190,6 +224,10 @@ function submitForm(e) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (bookerType) {
+    bookerType.addEventListener("change", handleBookerTypeChange);
+  }
+
   if (utilizationSelect) {
     utilizationSelect.addEventListener("change", hanldeUtilizationChange);
   }
